@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Veronica Vasquez">
+  <link href="./styles/style.css" rel="Stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <link rel="icon" type="image/icon" href="/img/icono-16x16.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Encriptador alura</title>
+</head>
+<body>
+    <header class="header">
+        <div class="modo_oscuro">
+          <input id="dark" type="checkbox" onclick="$darkMode();">
+        </div>
+        <img class="logo" src="./img/Logo.png" alt="logo">
+        <h1 class="titulo"> Encriptador de Texto</h1>
+    </header>
+    <main>
+        <div class="mensaje_contenedor">
+            <textarea class="text-container" id="textEncriptar" name="text" size="24" maxlength="200" rows="5"
+              spellcheck="false" autofocus="true" placeholder="Ingrese texto aquí" oninput="$cambiarMensaje();"
+              class="text-input smooth-type" required></textarea>
+            <div class="condiciones" id="mensaje__alert">
+              <p> <i class="fa-solid fa-circle-info"></i> Solo letras minúsculas y sin acentos </p>
+            </div>
+            <div class="grupo__botones">
+              <button onclick="$cifrar()" type="button" class="botones" id="encriptar">encriptar</button>
+              <button onclick="$cifrar(false)" type="button" class="botones" id="desencriptar">desencriptar </button>
+              <button onclick="$reiniciar()" class="botones">limpiar</button>
+            </div>
+          </div>
+          <div class="rectangle">
+            <div id='Msrc' class="content-img">
+              <img src="./img/Muñeco.png" id="muñeco">
+              <div class="container_encriptado" id="mensaje_encriptado">
+                <p id="mensaje_alternativo">Ningún mensaje fue encontrado</p>
+                <p id="mensaje">Ingrese el texto que desea encriptar o desencriptar</p>
+                <textarea class="text-container2" id="textarea2" rows="5" readonly="true"></textarea>
+                <div class="btn-copiar">
+                  <button id="copy" onclick="$copiarResultado()" class="botones" style="display: none;">copiar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    </main>
+    <footer class="footer">
+    <p>Alura Latam 2024. Desarrollado Por Veronica Vasquez </p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
